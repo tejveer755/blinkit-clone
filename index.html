@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <!-- <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png"> -->
+
+  <title>Blinkit clone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <img src="./assets/icons/logo.svg" alt="Blinkit" class="logo">
+    <div class="location">
+      <h2>Delivery in 8 minutes</h2>
+      <p class="address">129-A, H-block, New Delhi</p>
+    </div>
+
+    <div class="search_box">
+      <img src="./assets/icons/search-svgrepo-com.svg" alt="">
+      <input type="text" placeholder="Search here..." id="searchInput">
+    </div>
+    <button class="login">Login</button>
+    <button id="openCartBtn" class="cart-btn"><img src="./assets/icons/icon-add-to-cart.svg" alt=""> Cart</button>
+
+  </header>
+
+  <div id="searchResults"></div>
+
+
+  <main id="products"></main>
+
+  <!-- Cart Modal -->
+  <div id="cartModal" class="cart-modal">
+    <div class="cart-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h2>My Cart</h2>
+        <span class="close-btn">&times;</span>
+      </div>
+
+      <!-- Cart Items Section -->
+      <div id="cartItems" class="cart-items">
+        <!-- Cart items will be dynamically inserted here -->
+      </div>
+
+      <!-- Bill Details -->
+      <div class="bill-details">
+        <div>
+          <p>Items total</p>
+          <p id="itemsTotal">₹0</p>
+        </div>
+        <div>
+          <p>Delivery charge</p>
+          <p>₹25</p>
+        </div>
+        <div>
+          <p>Handling charge</p>
+          <p>₹2</p>
+        </div>
+        <div>
+          <p><strong>Grand total</strong></p>
+          <p id="totalBill"><strong>₹0</strong></p>
+        </div>
+      </div>
+
+      <!-- Cancellation Policy -->
+      <div class="cancellation-policy">
+        <h3>Cancellation Policy</h3>
+        <p>Orders cannot be cancelled once packed for delivery. In case of unexpected delays, a refund will be provided,
+          if applicable.</p>
+      </div>
+
+      <!-- Footer -->
+      <div class="cart-footer">
+        <p>₹<span id="grandTotal">0</span> TOTAL</p>
+        <button id="proceedButton">Confirm Order</button>
+      </div>
+    </div>
+  </div>
+
+
+<!-- Confirmation Modal -->
+<div id="confirmationModal" class="confirmation-modal">
+  <div class="confirmation-content">
+    <div class="modal-header">
+      <h2>Order Confirmation</h2>
+      <span class="close-btn-confirmation">&times;</span>
+    </div>
+
+    <div class="confirmation-body">
+      <img src="./assets/icons/icon-order-confirmed.svg" alt="">
+      <p class="thankuMsg">Thank you! Your order has been confirmed and will be delivered shortly.</p>
+      <p>Estimated Delivery Time: <strong>8 minutes</strong></p>
+      <p>Order Total: ₹<span id="orderTotal"></span></p>
+    </div>
+    <div class="confirmation-footer">
+      <button id="closeConfirmationButton">Close</button>
+    </div>
+  </div>
+</div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

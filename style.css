@@ -1,0 +1,410 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html,
+body {
+    width: 100vw;
+    height: fit-content;
+    overflow-x: hidden;
+
+}
+
+header {
+    display: flex;
+    margin: 30px 40px;
+    align-items: center;
+}
+
+main {
+    overflow-y: scroll;
+    height: 85vh;
+}
+
+.logo {
+    margin-right: 75px;
+    width: 150px;
+    height: auto;
+}
+
+.login {
+    background: transparent;
+    border: none;
+    font-size: 22px;
+    margin: 0 30px;
+    margin-left: auto;
+    color: #363636;
+}
+
+.cart-btn {
+    color: white;
+    background: green;
+    padding: 10px 15px;
+    font-size: 20px;
+    border-radius: 6px;
+    border: none;
+}
+
+.search_box {
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 10px;
+    height: 50px;
+    background: #f6f4f4;
+    display: flex;
+}
+
+.search_box img {
+    width: 25px;
+    margin: 0 20px;
+    height: auto;
+    height: auto;
+}
+
+input {
+    border: none;
+    outline: none;
+    width: 90%;
+    background: transparent;
+    font-size: 20px;
+    height: 100%;
+}
+
+.address {
+    font-size: 14px;
+    color: gray;
+    font-weight: 200;
+    margin-top: 6px;
+}
+
+
+
+.categoryHeader {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.product-wrapper {
+    width: 90%;
+    margin: 20px auto;
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+    padding-bottom: 10px;
+}
+
+.product-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(33, 32, 32, 0.148);
+    margin: 15px;
+    width: 240px;
+    flex-shrink: 0;
+    padding: 30px 13px;
+}
+
+.image {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    font-size: 20px;
+    font-weight: 500;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(241, 209, 114);
+    margin-bottom: 10px;
+}
+
+.productName {
+    margin: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.product-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+
+.quantity-controls-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.quantityBtn button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.quantityBtn {
+    background-color: green;
+    border-radius: 6px;
+    padding: 5px 8px;
+    color: white;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.addBtn {
+    background-color: transparent;
+    font-size: 1.15rem;
+    font-weight: 500;
+    border-radius: 6px;
+    color: green;
+    border: 1px solid green;
+    padding: 5px 8px;
+    cursor: pointer;
+}
+
+.quantity-controls {
+    display: flex;
+    /* justify-content: space-around; */
+    align-items: center;
+    margin-top: 10px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 50%;
+    position: relative;
+}
+
+.close-btn {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#searchResults {
+    display: none;
+    /* Hidden by default */
+    width: 90%;
+    margin: 20px auto;
+    overflow-x: auto;
+    white-space: nowrap;
+    /* display: flex; */
+    padding-bottom: 10px;
+}
+
+/* Modal Styling */
+.cart-modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.cart-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+}
+
+.itemTotal {
+    margin-left: auto;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+}
+
+.close-btn {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.cart-items {
+    margin-top: 20px;
+}
+
+.cart-item {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+
+.cart-item img {
+    margin-right: 20px;
+    width: 50px;
+    height: auto;
+}
+
+.bill-details {
+    margin: 20px 0;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+}
+
+.bill-details div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.cancellation-policy {
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+}
+
+.cart-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+.cart-footer button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/* Confirmation Modal Styling */
+.confirmation-modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Dimmed background */
+}
+
+.confirmation-content {
+    background-color: white;
+    margin: 10% auto;
+    /* Center vertically and horizontally */
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    /* Limit max width */
+    text-align: center;
+    /* Center-align text */
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.close-btn-confirmation {
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+.confirmation-body {
+    padding: 20px 0;
+    /* text-align: start; */
+}
+.confirmation-body p {
+   
+    margin: 10px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+
+.confirmation-body strong {
+    color: #000;
+}
+
+.confirmation-footer {
+    display: flex;
+    /* justify-content: center; */
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+.confirmation-footer button {
+    background-color: #28a745;
+    /* Green button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px auto;
+}
+
+.confirmation-footer button:hover {
+    background-color: #218838;
+    /* Darker green on hover */
+}
+
+
+/* Custom scrollbar styles for WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 12px;
+    /* Width of the scrollbar */
+    height: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    /* Background color of the track */
+    border-radius: 6px;
+    /* Rounded corners for the track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(241, 209, 114);
+    /* Color of the scrollbar thumb */
+    border-radius: 6px;
+    /* Rounded corners for the thumb */
+}
